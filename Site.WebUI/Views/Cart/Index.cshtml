@@ -1,0 +1,81 @@
+﻿@model Site.WebUI.Models.CartIndexViewModel
+@{
+    ViewBag.Title = "Ваша корзина";
+}
+@if (Model.Cart.Lines.Count() != 0)
+{
+<div class="shopping-cart-area nr-wish-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="s-cart-all">
+                    <div class="cart-form table-responsive">
+                        <table id="shopping-cart-table" class="data-table cart-table">
+                            <tr>
+                                <th>Кол-во</th>
+                                <th>Изображение</th>
+                                <th class="low2">Название товара</th>
+                                <th>Цена</th>
+                                <th>Общая цена</th>
+                                <th class="low1"></th>
+                            </tr>
+                            @foreach (var line in Model.Cart.Lines)
+                            {
+                            <tr>
+                                <td class="sop-cart">
+                                    <div class="tb-beg">
+                                        @line.Quantity
+                                    </div>
+                                </td>
+                                <td class="sop-cart">
+                                    <a href="#"><img class="primary-image" alt="" src=""></a>
+                                </td>
+                                <td class="sop-cart an-sh">
+                                    <div class="tb-beg">
+                                        @line.Vinyl.Artist - @line.Vinyl.Title
+                                    </div>
+                                </td>
+                                <td class="sop-cart">
+                                    <div class="tb-product-price font-noraure-3">
+                                        <span class="amount">@line.Vinyl.Price.ToString("# руб")</span>
+                                    </div>
+                                </td>
+                                <td class="cen">
+                                    <span class="amount">@((line.Quantity * line.Vinyl.Price).ToString("# руб"))</span>
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                                    {
+                                        @Html.Hidden("VinylId", line.Vinyl.VinylId)
+                                        @Html.HiddenFor(x => x.ReturnUrl)
+                                        <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
+                                    }
+                                </td>
+                            </tr>
+                            }
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" class="text-right">Итого:</td>
+                                    <td class="cen">
+                                       <span class="amount">@Model.Cart.ComputeTotalValue().ToString("# руб")</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div style="margin-bottom:80px; text-align:center; margin-top:15px">
+                                <a class="btn btn-primary ce5" style="margin-right:20px" href="@Model.ReturnUrl">Продолжить покупку</a>
+                                @Html.ActionLink("Оформить заказ", "Checkout", null, new { @class = "btn btn-primary ce5" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+else
+{
+    <div style="margin:150px 0; text-align: center">
+        <h3>Ваша корзина пуста</h3>
+    </div>
+}

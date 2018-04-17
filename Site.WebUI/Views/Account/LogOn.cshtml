@@ -1,0 +1,44 @@
+﻿@model Site.WebUI.Models.LogOnViewModel
+
+@{
+    ViewBag.Title = "Admin:Log In";
+    Layout = "";
+}
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Control Panel</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/Admin.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<div class="container">
+    @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class = "form-signin" }))
+    {
+        <h3>Admin Control Panel</h3>
+        <div>
+            @Html.ValidationSummary(true)
+            @Html.EditorForModel()
+        </div>
+        <p>
+            <input class="btn btn-large btn-primary" type="submit" value="Log in" />
+        </p>           
+    }
+        
+</div>
+<div align="center">
+    <p><h6>by Store Music Records</h6></p>
+</div>
+</body>
+</html>

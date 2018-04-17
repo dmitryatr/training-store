@@ -1,0 +1,14 @@
+﻿@model IEnumerable<string>
+
+@foreach (var link in Model)
+{
+    <li class="cat-item @(link == ViewBag.SelectedStyle ? "current-cat" : "")"> 
+    @Html.RouteLink(link, new
+{
+    controller = "Vinyl",
+    action = "List",
+    style = link,
+    page = 1
+})
+    </li>
+}

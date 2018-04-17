@@ -1,0 +1,31 @@
+﻿@model Site.WebUI.Models.CartIndexViewModel
+
+<a href="#">
+    <i class="fa fa-shopping-cart"></i>
+    @if (Model.Cart.Lines.Count() > 0)
+    {
+        <span class="color1">@Model.Cart.Lines.Count()</span>
+    }
+</a>
+
+@foreach (var link in Model.Cart.Lines)
+{
+    
+    <ul class="drop-cart">
+        <li>
+            <a href="#"><img src="~/Content/img/cart/1.png"/></a>
+            <div class="add-cart-text">
+                <p>@link.Vinyl.Artist - @link.Vinyl.Title</p>
+                <p>@link.Vinyl.Price.ToString("# руб")</p>
+            </div>
+        </li>
+        <li>
+            <div class="goto text-center">
+                <a href="cart.html"><strong>go to cart &nbsp;<i class="pe-7s-angle-right"></i></strong></a>
+            </div>
+        </li>
+        <li class="checkout-btn text-center">
+            <a href="checkout.html">Check out</a>
+        </li>
+    </ul>
+}

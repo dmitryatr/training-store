@@ -1,0 +1,108 @@
+﻿@model Site.Domain.Entities.Vinyl
+
+@{
+    ViewBag.Title = "Admin:Edit" + Model.Artist + " - " + Model.Title;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/ErrorStyles.css" rel="stylesheet" />
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit "@Model.Artist - @Model.Title" </h3>
+    </div>
+
+
+    @using (Html.BeginForm("Edit", "Admin",
+                                    FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(x => x.VinylId)
+            @*@Html.HiddenFor(x=>x.ImageData)
+                @Html.HiddenFor(x=>x.ImageMimeType)*@
+            <label>Artist:</label>
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.Artist, null, new { @class = "form-control" })
+                @Html.ValidationMessage("Artist")
+            </div>
+            <label>Title:</label>
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.Title, null, new { @class = "form-control" })
+                @Html.ValidationMessage("Title")
+            </div>
+            <label>Style:</label>
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.Style, null, new { @class = "form-control" })
+                @Html.ValidationMessage("Style")
+            </div>
+            <label>Country:</label>
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.Country, null, new { @class = "form-control" })
+                @Html.ValidationMessage("Country")
+            </div>
+            @*<h5>Brand:@Html.EditorFor(x => x.Brand)</h5>*@
+            @*<h5>Activity:@Html.EditorFor(x => x.Activity)</h5>*@
+            <label>Price:</label>
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.Price, null, new { @class = "form-control" })
+                @Html.ValidationMessage("Price")
+            </div>
+            @*<h5>Old Price:@Html.EditorFor(x=>x.OldPrice)</h5>*@
+            @*<h5>Article:@Html.EditorFor(x => x.Article)</h5>
+                <h5>Description:@Html.EditorFor(x => x.Description)</h5>
+                <h5>Novelty:@Html.EditorFor(x => x.Novelty)</h5>
+                <h5>Status:@Html.EditorFor(x => x.Status)</h5>*@
+
+        </div>
+
+
+                <div class="form-group">
+                    <div style="position:relative;">
+                        <label>Картинка</label>
+                        <a class='btn' href='javascript:;'>
+                            Выберите файл...
+                            <input type="file" name="Image" size="40"
+                                   style="position:absolute;z-index:2;top:0;
+                                left:0;filter: alpha(opacity=0); opacity:0;
+                                background-color:transparent;color:transparent;"
+                                   onchange='$("#upload-file-info").html($(this).val());'>
+                        </a>
+                        <span class='label label-info' id="upload-file-info"></span>
+                    </div>
+                    @if (Model.ImageData == null)
+                {
+                        <div class="form-control-static">Нет картинки</div>
+                    }
+                    else
+                    {
+                        <img class="img-thumbnail" width="150" height="150"
+                             src="@Url.Action("GetImage", "Vinyl",
+                        new { Model.VinylId })" />
+                    }
+                </div>
+
+        <div class="panel-footer">
+        <input class="btn btn-large btn-primary" type="submit" value="Save" />
+        @Html.ActionLink("Cancel and return to List", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,264 @@
+﻿<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>33.бел</title>
+    <meta name="description" content="33 - каталог винила">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon
+    ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/img/favicon.png">
+    <!-- google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="~/Content/css/animate.css">
+    <!-- pe-icon-7-stroke -->
+    <link rel="stylesheet" href="~/Content/css/pe-icon-7-stroke.min.css">
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href="~/Content/css/jquery-ui.min.css">
+    <!-- Image Zoom CSS
+    ============================================ -->
+    <link rel="stylesheet" href="~/Content/css/img-zoom/jquery.simpleLens.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="~/Content/css/meanmenu.min.css">
+    <!-- nivo slider CSS
+    ============================================ -->
+    <link rel="stylesheet" href="~/Content/lib/css/nivo-slider.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/lib/css/preview.css" type="text/css" media="screen" />
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <link rel="stylesheet" href="~/Content/css/ErrorStyles.css">
+    <script src="~/Scripts/vendor/modernizr-2.8.3.min.js"></script>
+
+
+</head>
+
+<body>
+    
+        <header>
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-4">
+                            <div class="left-header clearfix">
+                                <ul>
+                                    <li><p><i class="fa fa-phone" aria-hidden="true"></i>(+375) 29 696-52-87</p></li>
+                                    <li class="hd-none"><p><i class="fa fa-clock-o" aria-hidden="true"></i>Пн-Пт : 9:00-19:00</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8">
+                            <div class="right-header">
+                                <ul>
+                                    <li><a href="my-account.html"><i class="fa fa-user"></i>Профиль</a></li>
+                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Корзина</a></li>
+                                    <li><a href="wishlist.html"><i class="fa fa-heart"></i>Лист ожидания</a></li>
+                                    <li><a href="checkout.html"><i class="fa fa-usd"></i>Регистрация</a></li>
+                                    <li><a href="login.html"><i class="fa fa-lock"></i>Вход</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom header-bottom-one" id="sticky-menu">
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-sm-2 col-md-2 col-xs-4">
+                            <div class="logo">
+                                <a href="index.html"><img src="~/Content/img/logo.png" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-10 col-md-10 col-xs-8 static">
+                            <div class="all-manu-area">
+                                <div class="mainmenu clearfix hidden-sm hidden-xs">
+                                    <nav>
+                                        <ul>
+                                            <li>
+                                                <a href="shop.html">Каталог</a>
+                                                <div class="magamenu ">
+                                                    <ul class="again">
+                                                        <li class="single-menu colmd4">
+                                                            <span>Жанр</span>
+                                                            @Html.Action("Menu2", "Nav")
+                                                        </li>
+                                                        
+                                                        <li class="single-menu colmd4">
+                                                            <span>Исполнитель</span>
+                                                            <a href="#">А-Я</a>
+                                                            <a href="#">A-Z</a>
+                                                            <a href="#">Смешанные</a>
+                                                        </li>
+                                                        <li class="single-menu colmd4">
+                                                            <span>Грамзапись</span>
+                                                            <a href="#">А-Я</a>
+                                                            <a href="#">A-Z</a>
+                                                        </li>
+                                                        <li class="single-menu colmd4 colmd5">
+                                                            <a href="#">
+                                                                <img alt="" src="~/Content/img/maga-banner.png">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <!-- <li><a href="shop.html">Каталог</a></li> -->
+                                            <li>
+                                                <a href="#">Pages</a>
+                                                <ul>
+                                                    <li><a href="about-us.html">About</a></li>
+                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="login.html">Login</a></li>
+                                                    <li><a href="my-account.html">My Account</a></li>
+                                                    <li><a href="shop.html">shop</a></li>
+                                                    <li><a href="shop-list.html">Shop List</a></li>
+                                                    <li><a href="shopping-cart.html">Shopping-Cart</a></li>
+                                                    <li><a href="single-product.html">Single Product</a></li>
+                                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about-us.html">О нас</a></li>
+                                            <li><a href="contact.html">Контакты</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                                <div class="right-header re-right-header">
+                                    <ul>
+                                        <li class="re-icon tnm">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                            <form method="get" id="searchform" action="#">
+                                                <input type="text" value="" name="s" id="ws" placeholder="НАЙТИ..." />
+                                                <button type="submit"><i class="pe-7s-search"></i></button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                                @Html.Action("Summary", "Cart")
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <section class="slider-main-area">
+        <div class="main-slider an-si">
+            <div class="bend niceties preview-2 hm-ver-1">
+                <img src="~/Content/img/slider/1.png" alt="" title="#slider-direction-3" />
+            </div>
+        </div>
+    </section>  
+                @RenderBody()
+    <footer class="re-footer-section">
+        <!-- footer-top area start -->
+        <div class="footer-top section-padding-top">
+            <div class="footer-dsc">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="single-text res-text">
+                                <div class="footer-title">
+                                    <h4>Контакты</h4>
+                                    <hr class="dubble-border" />
+                                </div>
+                                <div class="footer-text">
+                                    <ul>
+                                        <li>
+                                            <i class="pe-7s-map-marker"></i>
+                                            <p>пр. Независимости 66</br> Минск, Беларусь</p>
+                                            <p class="rs">УНП 1233432324</p>
+                                        </li>
+                                        <li>
+                                            <i class="pe-7s-call"></i>
+                                            <p>+375 (029) 664 10 53</p>
+                                            <p>+375 (029) 664 10 56</p>
+                                        </li>
+                                        <li>
+                                            <i class="pe-7s-mail-open"></i>
+                                            <p>info@33.бел</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-3 margin-top">
+                            <div class="single-text res-text">
+                                <div class="footer-title">
+                                    <h4>Информация</h4>
+                                    <hr class="dubble-border" />
+                                </div>
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="contact.html">Главная</a></li>
+                                        <li><a href="#">О нас</a></li>
+                                        <li><a href="#">Карта сайта</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="single-text res-text">
+                                <div class="footer-title">
+                                    <h4>Каталог</h4>
+                                    <hr class="dubble-border" />
+                                </div>
+                                <div class="footer-menu">
+                                    <ul>
+                                        <li><a href="login.html">Жанры</a></li>
+                                        <li><a href="wishlist.html">Исполнители</a></li>
+                                        <li><a href="order-complete">Грамзапись</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 hidden-sm col-md-3 margin-top">
+                            <div class="single-text res-text">
+                                <div class="footer-title">
+                                    <h4>Обратная связь</h4>
+                                    <hr class="dubble-border" />
+                                </div>
+                                <div class="footer-text">
+                                    <form action="mail.php" method="post">
+                                        <input type="text" name="email" placeholder="E-mail" />
+                                        <input type="submit" value="Отправить" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="dubble-border" />
+            </div>
+        </div>
+        <!-- footer-top area end -->
+        <!-- footer-bottom area start -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <p>&copy; 2017</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom area end -->
+    </footer>
+        </body>
+</html>

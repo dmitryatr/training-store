@@ -1,0 +1,44 @@
+﻿@model Site.Domain.Entities.Vinyl
+
+<link href="~/Content/css/MyStyle.css" rel="stylesheet" />
+<div class="col-md-4 col-lg-4 col-sm-6" style="margin-bottom:20px">
+    <div class="single-product">
+        <div class="product-img">
+            <a href="#">
+            @if (Model.ImageData != null)
+            {
+                <img src="@Url.Action("GetImage", "Vinyl", new { Model.VinylId })" style="width:262px; height:247px" />
+            }
+            else
+            { <img src="~/Content/img/products/1.jpg">}
+                <img class="secondary-image" alt="Менухин Избранные концерты для скрипки 3LP / Germany" src="~/Content/img/products/2.jpg">
+            </a>
+        </div>
+        <div class="product-dsc">
+            <h3><a href="#">@Model.Artist | @Model.Title | @Model.Country</a></h3>
+            <div class="star-price">
+                <span class="price-left">@Model.Price руб.</span>
+                @*<span class="star-right">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </span>*@
+            </div>
+        </div>
+        <div class="actions-btn">
+            <a style="margin-right:30px; display:compact" href="#" data-placement="top" data-target="#quick-view" data-trigger="hover" data-toggle="modal" data-original-title="Увеличить"><i class="fa fa-eye"></i></a>
+            @*<a href=@Url.Action("AddToCart", "Cart")><i class="fa fa-shopping-cart"></i></a>*@
+            @*<a href="/Cart/AddToCart" data-toggle="tooltip" data-placement="top" title="В корзину"><i class="fa fa-shopping-cart"></i></a>*@
+            @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post, new { @class = "actions-btn", style = "width:35px; height:39px" }))
+            {
+                    @Html.HiddenFor(x => x.VinylId)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <button type="submit" value="Добавить в корзину"><i class="fa fa-shopping-cart"></i></button>
+            }
+</div>
+    </div>
+</div>
+<!-- single-product end -->	
+
